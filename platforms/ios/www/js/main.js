@@ -28,12 +28,64 @@ var App = function (_React$Component) {
     }
 
     _createClass(App, [{
+        key: "shareWithFB",
+        value: function shareWithFB() {
+            window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
+        key: "shareWithInsta",
+        value: function shareWithInsta() {
+            window.plugins.socialsharing.shareViaInstagram('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
+        key: "shareWithTwitter",
+        value: function shareWithTwitter() {
+            window.plugins.socialsharing.shareViaTwitter('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
+        key: "bro",
+        value: function bro() {
+            alert("bro");
+        }
+    }, {
         key: "render",
         value: function render() {
+            console.log(window);
             return _react2.default.createElement(
-                "h2",
+                "div",
                 null,
-                "Test 2"
+                _react2.default.createElement(
+                    "h2",
+                    null,
+                    "Test 3"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithFB },
+                    "Facebook"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithInsta },
+                    "Instagram"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithTwitter },
+                    "Twitter"
+                )
             );
         }
     }]);

@@ -22,27 +22,68 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+var Sharing = function (_React$Component) {
+    _inherits(Sharing, _React$Component);
 
-    function App() {
-        _classCallCheck(this, App);
+    function Sharing() {
+        _classCallCheck(this, Sharing);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Sharing.__proto__ || Object.getPrototypeOf(Sharing)).apply(this, arguments));
     }
 
-    _createClass(App, [{
+    _createClass(Sharing, [{
+        key: "shareWithFB",
+        value: function shareWithFB() {
+            window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
+        key: "shareWithInsta",
+        value: function shareWithInsta() {
+            window.plugins.socialsharing.shareViaInstagram('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
+        key: "shareWithTwitter",
+        value: function shareWithTwitter() {
+            window.plugins.socialsharing.shareViaTwitter('Message via Facebook', null /* img */, null /* url */, function () {
+                console.log('share ok');
+            }, function (errormsg) {
+                alert(errormsg);
+            });
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
-                "h2",
+                "div",
                 null,
-                "Test 1"
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithFB },
+                    "Facebook"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithInsta },
+                    "Instagram"
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { onClick: this.shareWithTwitter },
+                    "Twitter"
+                )
             );
         }
     }]);
 
-    return App;
+    return Sharing;
 }(_react2.default.Component);
 
-exports.default = App;
+exports.default = Sharing;

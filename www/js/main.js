@@ -10,6 +10,10 @@ var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _sharing = require("./sharing");
+
+var _sharing2 = _interopRequireDefault(_sharing);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,9 +35,14 @@ var App = function (_React$Component) {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
-                "h2",
+                "div",
                 null,
-                "Test 3"
+                _react2.default.createElement(
+                    "h2",
+                    null,
+                    "Dreamage"
+                ),
+                _react2.default.createElement(_sharing2.default, null)
             );
         }
     }]);

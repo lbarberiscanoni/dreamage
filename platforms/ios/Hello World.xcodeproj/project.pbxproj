@@ -52,6 +52,10 @@
 		4A8DA88F35444697951D71B2 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A8334179074D5AAD0E7F7E /* CDVViewController+SplashScreen.m */; };
 		7BD60A6794614B89805FB22A /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D1D2901BDD0468F8DF0CC3F /* CDVStatusBar.m */; };
 		85831E0694014C6AA995E36D /* CDVVibration.m in Sources */ = {isa = PBXBuildFile; fileRef = 20A85977A4A947A9B4B60B97 /* CDVVibration.m */; };
+		CA5B14B763784D45BE89FDD4 /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = B17DA8F8628440DCB54F9092 /* NSString+URLEncoding.m */; };
+		C85FBCBD624B45139234A554 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BF2A5B8857439E84D79052 /* SocialSharing.m */; };
+		8ABD5E6E36244526A4CF7118 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AA578883364DC89FF01181 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		BB3952A48DBF4F14BDBDC5A6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007A4B4F9D345ACBDD53CF0 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +159,12 @@
 		5F6CDE14765A4F09838EB80B /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		20A85977A4A947A9B4B60B97 /* CDVVibration.m */ = {isa = PBXFileReference; name = "CDVVibration.m"; path = "cordova-plugin-vibration/CDVVibration.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		84638686E0E045FEA34C7376 /* CDVVibration.h */ = {isa = PBXFileReference; name = "CDVVibration.h"; path = "cordova-plugin-vibration/CDVVibration.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B17DA8F8628440DCB54F9092 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; name = "NSString+URLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+URLEncoding.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		15BF2A5B8857439E84D79052 /* SocialSharing.m */ = {isa = PBXFileReference; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		9752E8A2632D4ED3A6FDAF31 /* NSString+URLEncoding.h */ = {isa = PBXFileReference; name = "NSString+URLEncoding.h"; path = "cordova-plugin-x-socialsharing/NSString+URLEncoding.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		525DFAC9DEAC4061A1314E79 /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		D1AA578883364DC89FF01181 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		C007A4B4F9D345ACBDD53CF0 /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +182,8 @@
 				6985F22257C14FEE907467B5 /* AudioToolbox.framework in Frameworks */,
 				B56D25ED5A974E32B270E865 /* SystemConfiguration.framework in Frameworks */,
 				E2B3CD3A6FB940A8B942205C /* CoreTelephony.framework in Frameworks */,
+				8ABD5E6E36244526A4CF7118 /* Social.framework in Frameworks */,
+				BB3952A48DBF4F14BDBDC5A6 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +264,8 @@
 				AC5E6F183FA943AE874A78A7 /* AudioToolbox.framework */,
 				ED926150ADF74D90BA406BAA /* SystemConfiguration.framework */,
 				4316A47040694EA3AFBE96A0 /* CoreTelephony.framework */,
+				D1AA578883364DC89FF01181 /* Social.framework */,
+				C007A4B4F9D345ACBDD53CF0 /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -330,6 +344,10 @@
 				5F6CDE14765A4F09838EB80B /* CDVStatusBar.h */,
 				20A85977A4A947A9B4B60B97 /* CDVVibration.m */,
 				84638686E0E045FEA34C7376 /* CDVVibration.h */,
+				B17DA8F8628440DCB54F9092 /* NSString+URLEncoding.m */,
+				15BF2A5B8857439E84D79052 /* SocialSharing.m */,
+				9752E8A2632D4ED3A6FDAF31 /* NSString+URLEncoding.h */,
+				525DFAC9DEAC4061A1314E79 /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = "Hello World/Plugins";
@@ -472,6 +490,8 @@
 				4A8DA88F35444697951D71B2 /* CDVViewController+SplashScreen.m in Sources */,
 				7BD60A6794614B89805FB22A /* CDVStatusBar.m in Sources */,
 				85831E0694014C6AA995E36D /* CDVVibration.m in Sources */,
+				CA5B14B763784D45BE89FDD4 /* NSString+URLEncoding.m in Sources */,
+				C85FBCBD624B45139234A554 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

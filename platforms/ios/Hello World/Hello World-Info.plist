@@ -41,5 +41,9 @@
     </dict>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string/>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+      <string>fb</string>
+    </array>
   </dict>
 </plist>

@@ -1,10 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Sharing from "./sharing";
 
 class App extends React.Component {
     render() {
         return(
-            <h2>Test 3</h2>
+            <div>
+                <h2>Dreamage</h2>
+                <Sharing />
+            </div>
+
         )
     }
 }
