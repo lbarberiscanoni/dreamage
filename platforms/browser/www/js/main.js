@@ -34,6 +34,7 @@ var App = function (_React$Component) {
     _createClass(App, [{
         key: "render",
         value: function render() {
+            console.log(navigator);
             return _react2.default.createElement(
                 "div",
                 null,
@@ -42,7 +43,13 @@ var App = function (_React$Component) {
                     null,
                     "Dreamage"
                 ),
-                _react2.default.createElement(_sharing2.default, null)
+                _react2.default.createElement(_sharing2.default, null),
+                _react2.default.createElement("input", { type: "file", id: "mypic", accept: "image/*" }),
+                _react2.default.createElement(
+                    "label",
+                    { htmlFor: "mypic" },
+                    "PIC"
+                )
             );
         }
     }]);

@@ -10,6 +10,10 @@ var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _sharing = require("./sharing");
+
+var _sharing2 = _interopRequireDefault(_sharing);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28,64 +32,19 @@ var App = function (_React$Component) {
     }
 
     _createClass(App, [{
-        key: "shareWithFB",
-        value: function shareWithFB() {
-            window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function () {
-                console.log('share ok');
-            }, function (errormsg) {
-                alert(errormsg);
-            });
-        }
-    }, {
-        key: "shareWithInsta",
-        value: function shareWithInsta() {
-            window.plugins.socialsharing.shareViaInstagram('Message via Facebook', null /* img */, null /* url */, function () {
-                console.log('share ok');
-            }, function (errormsg) {
-                alert(errormsg);
-            });
-        }
-    }, {
-        key: "shareWithTwitter",
-        value: function shareWithTwitter() {
-            window.plugins.socialsharing.shareViaTwitter('Message via Facebook', null /* img */, null /* url */, function () {
-                console.log('share ok');
-            }, function (errormsg) {
-                alert(errormsg);
-            });
-        }
-    }, {
-        key: "bro",
-        value: function bro() {
-            alert("bro");
-        }
-    }, {
         key: "render",
         value: function render() {
-            console.log(window);
+            console.log(navigator);
             return _react2.default.createElement(
                 "div",
                 null,
                 _react2.default.createElement(
                     "h2",
                     null,
-                    "Test 3"
+                    "Dreamage"
                 ),
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithFB },
-                    "Facebook"
-                ),
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithInsta },
-                    "Instagram"
-                ),
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithTwitter },
-                    "Twitter"
-                )
+                _react2.default.createElement(_sharing2.default, null),
+                _react2.default.createElement("input", { type: "file", id: "mypic", accept: "image/*" })
             );
         }
     }]);

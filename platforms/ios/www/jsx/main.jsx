@@ -1,39 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Sharing from "./sharing";
 
 class App extends React.Component {
-    shareWithFB() {
-        window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
-    }
-
-    shareWithInsta() {
-        window.plugins.socialsharing.shareViaInstagram('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
-    }
-
-    shareWithTwitter() {
-        window.plugins.socialsharing.shareViaTwitter('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
-    }
-
-    bro() {
-        alert("bro");
-    }
-
     render() {
-        console.log(window)
+        console.log(navigator);
         return(
             <div>
-                <h2>Test 3</h2>
-                <button onClick={ this.shareWithFB }>
-                    Facebook
-                </button>
-                <button onClick={ this.shareWithInsta }>
-                    Instagram
-                </button>
-                <button onClick={ this.shareWithTwitter }>
-                    Twitter
-                </button>
+                <h2>Dreamage</h2>
+                <Sharing />
+                <input type="file" id="mypic" accept="image/*"></input>
             </div>
-
         )
     }
 }
