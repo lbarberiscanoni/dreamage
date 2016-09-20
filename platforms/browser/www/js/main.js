@@ -14,6 +14,22 @@ var _sharing = require("./sharing");
 
 var _sharing2 = _interopRequireDefault(_sharing);
 
+var _filters = require("./filters");
+
+var _filters2 = _interopRequireDefault(_filters);
+
+var _upload = require("./upload");
+
+var _upload2 = _interopRequireDefault(_upload);
+
+var _navBar = require("./navBar");
+
+var _navBar2 = _interopRequireDefault(_navBar);
+
+var _canvas = require("./canvas");
+
+var _canvas2 = _interopRequireDefault(_canvas);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28,29 +44,58 @@ var App = function (_React$Component) {
     function App() {
         _classCallCheck(this, App);
 
-        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+
+        _this.state = {
+            location: "home",
+            image: "https://media.giphy.com/media/y1VEmPmG3t1VC/giphy.gif"
+        };
+        return _this;
     }
 
     _createClass(App, [{
+        key: "changeScreen",
+        value: function changeScreen(direction) {
+            var locations = ["home", "filter", "share"];
+            var current = this.state.location;
+            var currentIndex = locations.indexOf(current);
+            var new_screen = locations[currentIndex + direction];
+            this.setState({ location: new_screen });
+        }
+    }, {
+        key: "changeImage",
+        value: function changeImage(new_image) {
+            this.setState({ image: new_image });
+        }
+    }, {
         key: "render",
         value: function render() {
-            console.log(navigator);
-            return _react2.default.createElement(
-                "div",
-                null,
-                _react2.default.createElement(
-                    "h2",
-                    null,
-                    "Dreamage"
-                ),
-                _react2.default.createElement(_sharing2.default, null),
-                _react2.default.createElement("input", { type: "file", id: "mypic", accept: "image/*" }),
-                _react2.default.createElement(
-                    "label",
-                    { htmlFor: "mypic" },
-                    "PIC"
-                )
-            );
+            switch (this.state.location) {
+                case "home":
+                    return _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_canvas2.default, { image: this.state.image }),
+                        _react2.default.createElement(_upload2.default, { changeImage: this.changeImage.bind(this) })
+                    );
+                case "filter":
+                    return _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_canvas2.default, { image: this.state.image }),
+                        _react2.default.createElement(_filters2.default, null)
+                    );
+                case "share":
+                    return _react2.default.createElement(
+                        "div",
+                        null,
+                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_canvas2.default, { image: this.state.image }),
+                        _react2.default.createElement(_sharing2.default, null)
+                    );
+            }
         }
     }]);
 

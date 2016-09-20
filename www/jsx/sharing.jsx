@@ -16,16 +16,10 @@ class Sharing extends React.Component {
 
     render() {
         return(
-            <div>
-                <button onClick={ this.shareWithFB }>
-                    Facebook
-                </button>
-                <button onClick={ this.shareWithInsta }>
-                    Instagram
-                </button>
-                <button onClick={ this.shareWithTwitter }>
-                    Twitter
-                </button>
+            <div className="icon-container">
+                <span onClick={ this.shareWithFB } className="icon fui-facebook"></span>
+                <span onClick={ this.shareWithInsta } className="icon fui-instagram"></span>
+                <span onClick={ this.shareWithTwitter } className="icon fui-twitter"></span>
             </div>
         )
     }

@@ -63,22 +63,10 @@ var Sharing = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 "div",
-                null,
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithFB },
-                    "Facebook"
-                ),
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithInsta },
-                    "Instagram"
-                ),
-                _react2.default.createElement(
-                    "button",
-                    { onClick: this.shareWithTwitter },
-                    "Twitter"
-                )
+                { className: "icon-container" },
+                _react2.default.createElement("span", { onClick: this.shareWithFB, className: "icon fui-facebook" }),
+                _react2.default.createElement("span", { onClick: this.shareWithInsta, className: "icon fui-instagram" }),
+                _react2.default.createElement("span", { onClick: this.shareWithTwitter, className: "icon fui-twitter" })
             );
         }
     }]);

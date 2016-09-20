@@ -1,18 +1,59 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Sharing from "./sharing";
+import Filters from "./filters";
+import Upload from "./upload";
+import NavBar from "./navBar";
+import Canvas from "./canvas";
 
 class App extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            location: "home",
+            image: "https://media.giphy.com/media/y1VEmPmG3t1VC/giphy.gif",
+        }
+    }
+
+    changeScreen(direction) {
+        let locations = ["home", "filter", "share"]
+        let current = this.state.location 
+        let currentIndex = locations.indexOf(current)
+        let new_screen = locations[currentIndex + direction]
+        this.setState({location: new_screen })
+    }
+
+    changeImage(new_image) {
+        this.setState({ image: new_image })
+    }
+
     render() {
-        console.log(navigator);
-        return(
-            <div>
-                <h2>Dreamage</h2>
-                <Sharing />
-                <input type="file" id="mypic" accept="image/*"></input>
-                <label htmlFor="mypic">PIC</label>
-            </div>
-        )
+        switch(this.state.location) {
+            case "home":
+                return(
+                    <div>
+                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <Canvas image={ this.state.image } />
+                        <Upload changeImage={ this.changeImage.bind(this) }/>
+                    </div>
+                )
+            case "filter":
+                return(
+                    <div>
+                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <Canvas image={ this.state.image } />
+                        <Filters />
+                    </div>
+                )
+            case "share":
+                return(
+                    <div>
+                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <Canvas image={ this.state.image } />
+                        <Sharing />
+                    </div>
+                )
+        }
     }
 }
 
