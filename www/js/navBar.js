@@ -41,25 +41,39 @@ var NavBar = function (_React$Component) {
     }, {
         key: "render",
         value: function render() {
-            return _react2.default.createElement(
-                "header",
-                { className: "bar bar-nav" },
-                _react2.default.createElement(
-                    "span",
-                    { className: "clickable btn pull-left", onClick: this.changeScreen.bind(this, -1) },
-                    "BACK"
-                ),
-                _react2.default.createElement(
-                    "h2",
-                    { className: "title" },
-                    "Dreamage"
-                ),
-                _react2.default.createElement(
-                    "span",
-                    { className: "clickable btn pull-right", onClick: this.changeScreen.bind(this, 1) },
-                    "NEXT"
-                )
-            );
+            console.log("this is the nav");
+            console.log(this.props.location);
+            if (this.props.location == "home") {
+                return _react2.default.createElement(
+                    "header",
+                    { className: "bar bar-nav" },
+                    _react2.default.createElement(
+                        "h2",
+                        { className: "title" },
+                        "Dreamage"
+                    )
+                );
+            } else {
+                return _react2.default.createElement(
+                    "header",
+                    { className: "bar bar-nav" },
+                    _react2.default.createElement(
+                        "span",
+                        { className: "clickable btn pull-left", onClick: this.changeScreen.bind(this, -1) },
+                        "BACK"
+                    ),
+                    _react2.default.createElement(
+                        "h2",
+                        { className: "title" },
+                        "Dreamage"
+                    ),
+                    _react2.default.createElement(
+                        "span",
+                        { className: "clickable btn pull-right", onClick: this.changeScreen.bind(this, 1) },
+                        "NEXT"
+                    )
+                );
+            }
         }
     }]);
 

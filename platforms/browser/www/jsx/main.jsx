@@ -5,6 +5,7 @@ import Filters from "./filters";
 import Upload from "./upload";
 import NavBar from "./navBar";
 import Canvas from "./canvas";
+import Camera from "./camera";
 
 class App extends React.Component {
     constructor() {
@@ -32,15 +33,15 @@ class App extends React.Component {
             case "home":
                 return(
                     <div>
-                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <NavBar location={ this.state.location } changeScreen={ this.changeScreen.bind(this) } />
                         <Canvas image={ this.state.image } />
-                        <Upload changeImage={ this.changeImage.bind(this) }/>
+                        <Camera changeScreen={ this.changeScreen.bind(this) } changeImage={ this.changeImage.bind(this) }/>
                     </div>
                 )
             case "filter":
                 return(
                     <div>
-                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <NavBar location={ this.state.location } changeScreen={ this.changeScreen.bind(this) } />
                         <Canvas image={ this.state.image } />
                         <Filters />
                     </div>
@@ -48,7 +49,7 @@ class App extends React.Component {
             case "share":
                 return(
                     <div>
-                        <NavBar changeScreen={ this.changeScreen.bind(this) } />
+                        <NavBar location={ this.state.location } changeScreen={ this.changeScreen.bind(this) } />
                         <Canvas image={ this.state.image } />
                         <Sharing />
                     </div>

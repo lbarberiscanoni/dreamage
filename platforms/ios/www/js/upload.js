@@ -22,6 +22,10 @@ var _reactDropzone = require("react-dropzone");
 
 var _reactDropzone2 = _interopRequireDefault(_reactDropzone);
 
+var _dropbox = require("dropbox");
+
+var _dropbox2 = _interopRequireDefault(_dropbox);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -30,25 +34,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Upload = function (_React$Component) {
-    _inherits(Upload, _React$Component);
+var Uploader = function (_React$Component) {
+    _inherits(Uploader, _React$Component);
 
-    function Upload() {
-        _classCallCheck(this, Upload);
+    function Uploader() {
+        _classCallCheck(this, Uploader);
 
-        return _possibleConstructorReturn(this, (Upload.__proto__ || Object.getPrototypeOf(Upload)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (Uploader.__proto__ || Object.getPrototypeOf(Uploader)).apply(this, arguments));
     }
 
-    _createClass(Upload, [{
+    _createClass(Uploader, [{
         key: "changeImage",
         value: function changeImage(new_image) {
             this.props.changeImage(new_image);
+        }
+    }, {
+        key: "upload",
+        value: function upload(file) {
+            var dbx = new _dropbox2.default({ accessToken: "oaE89qwjJSUAAAAAAAAkjwLkjmx5qMS-zfoMULRGyxoR2gjuN1rA5Z8LHcgsgp2O" });
+            console.log(file);
+            dbx.filesUpload({ path: "/input/" + file.name, contents: file }).then(function (response) {
+                console.log(response);
+            }).catch(function (error) {
+                console.log(error);
+            });
         }
     }, {
         key: "onDrop",
         value: function onDrop(files) {
             console.log('Received files: ', files);
             this.changeImage(files[0].preview);
+            this.upload(files[0]);
         }
     }, {
         key: "render",
@@ -57,7 +73,7 @@ var Upload = function (_React$Component) {
         }
     }]);
 
-    return Upload;
+    return Uploader;
 }(_react2.default.Component);
 
-exports.default = Upload;
+exports.default = Uploader;

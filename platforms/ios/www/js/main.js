@@ -30,6 +30,10 @@ var _canvas = require("./canvas");
 
 var _canvas2 = _interopRequireDefault(_canvas);
 
+var _camera = require("./camera");
+
+var _camera2 = _interopRequireDefault(_camera);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -75,15 +79,15 @@ var App = function (_React$Component) {
                     return _react2.default.createElement(
                         "div",
                         null,
-                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_navBar2.default, { location: this.state.location, changeScreen: this.changeScreen.bind(this) }),
                         _react2.default.createElement(_canvas2.default, { image: this.state.image }),
-                        _react2.default.createElement(_upload2.default, { changeImage: this.changeImage.bind(this) })
+                        _react2.default.createElement(_camera2.default, { changeScreen: this.changeScreen.bind(this), changeImage: this.changeImage.bind(this) })
                     );
                 case "filter":
                     return _react2.default.createElement(
                         "div",
                         null,
-                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_navBar2.default, { location: this.state.location, changeScreen: this.changeScreen.bind(this) }),
                         _react2.default.createElement(_canvas2.default, { image: this.state.image }),
                         _react2.default.createElement(_filters2.default, null)
                     );
@@ -91,7 +95,7 @@ var App = function (_React$Component) {
                     return _react2.default.createElement(
                         "div",
                         null,
-                        _react2.default.createElement(_navBar2.default, { changeScreen: this.changeScreen.bind(this) }),
+                        _react2.default.createElement(_navBar2.default, { location: this.state.location, changeScreen: this.changeScreen.bind(this) }),
                         _react2.default.createElement(_canvas2.default, { image: this.state.image }),
                         _react2.default.createElement(_sharing2.default, null)
                     );
