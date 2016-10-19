@@ -167,5 +167,14 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.okmemo.cordova.imgdownloader": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Nomia/ImgDownloader.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

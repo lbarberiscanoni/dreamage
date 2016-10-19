@@ -1170,6 +1170,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/com.okmemo.cordova.imgdownloader/www/imgdownloader.js",
+        "id": "com.okmemo.cordova.imgdownloader.imgDownloader",
+        "pluginId": "com.okmemo.cordova.imgdownloader",
+        "clobbers": [
+            "cordova.plugins.imgDownloader"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -1194,7 +1202,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.1.3",
     "cordova-plugin-vibration": "2.1.2",
     "cordova-plugin-whitelist": "1.2.2",
-    "cordova-plugin-x-socialsharing": "5.1.3"
+    "cordova-plugin-x-socialsharing": "5.1.3",
+    "com.okmemo.cordova.imgdownloader": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

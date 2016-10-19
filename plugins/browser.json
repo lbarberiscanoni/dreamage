@@ -66,6 +66,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "com.okmemo.cordova.imgdownloader": {
+            "PACKAGE_NAME": "com.phonegap.helloworld"
         }
     },
     "dependent_plugins": {}

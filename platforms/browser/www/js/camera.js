@@ -55,28 +55,21 @@ var Camera = function (_React$Component) {
             this.props.changeScreen(a);
         }
     }, {
-        key: "upload",
-        value: function upload(file) {
-            var dbx = new _dropbox2.default({ accessToken: "oaE89qwjJSUAAAAAAAAkjwLkjmx5qMS-zfoMULRGyxoR2gjuN1rA5Z8LHcgsgp2O" });
-            console.log(file);
-            dbx.filesUpload({ path: "/input/" + file.name, contents: file }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
-    }, {
         key: "onDrop",
-        value: function onDrop(files) {
-            console.log('Received files: ', files);
-            this.changeImage(files[0].preview);
-            this.upload(files[0]);
+        value: function onDrop(e) {
+            var file = e.target.files[0];
+            console.log('Received files: ', file);
+            this.changeImage(file);
             this.moveForward(1);
         }
     }, {
         key: "render",
         value: function render() {
-            return _react2.default.createElement(_reactDropzone2.default, { className: "fui-photo dropzone", onDrop: this.onDrop.bind(this) });
+            return _react2.default.createElement(
+                "div",
+                { className: "fui-photo clickable" },
+                _react2.default.createElement("input", { type: "file", name: "image", onChange: this.onDrop.bind(this) })
+            );
         }
     }]);
 

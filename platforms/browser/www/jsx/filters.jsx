@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Dropbox from "dropbox";
+import $ from "jquery";
 
 class Filters extends React.Component {
     constructor() {
@@ -9,13 +11,13 @@ class Filters extends React.Component {
         }
     }
 
-    bro() {
-        alert("fuck");
+    dream(e) {
+        this.props.dream(e)
     }
 
     render() {
         let listOfFilters = []
-        this.state.dropBoxLinks.map((x) => listOfFilters.push(<img onClick={ this.bro.bind(this) } className="filter clickable" src={ x }></img>))
+        this.state.dropBoxLinks.map((x) => listOfFilters.push(<input type="image" form="form" onClick={ this.dream.bind(this) } className="filter clickable" src={ x }></input>))
         return(
             <div className="filters-container">
                 { listOfFilters }

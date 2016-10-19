@@ -14,6 +14,14 @@ var _reactDom = require("react-dom");
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _dropbox = require("dropbox");
+
+var _dropbox2 = _interopRequireDefault(_dropbox);
+
+var _jquery = require("jquery");
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -37,9 +45,9 @@ var Filters = function (_React$Component) {
     }
 
     _createClass(Filters, [{
-        key: "bro",
-        value: function bro() {
-            alert("fuck");
+        key: "dream",
+        value: function dream(e) {
+            this.props.dream(e);
         }
     }, {
         key: "render",
@@ -48,7 +56,7 @@ var Filters = function (_React$Component) {
 
             var listOfFilters = [];
             this.state.dropBoxLinks.map(function (x) {
-                return listOfFilters.push(_react2.default.createElement("img", { onClick: _this2.bro.bind(_this2), className: "filter clickable", src: x }));
+                return listOfFilters.push(_react2.default.createElement("input", { type: "image", form: "form", onClick: _this2.dream.bind(_this2), className: "filter clickable", src: x }));
             });
             return _react2.default.createElement(
                 "div",

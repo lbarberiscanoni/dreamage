@@ -56,6 +56,7 @@
 		C85FBCBD624B45139234A554 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 15BF2A5B8857439E84D79052 /* SocialSharing.m */; };
 		8ABD5E6E36244526A4CF7118 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AA578883364DC89FF01181 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		BB3952A48DBF4F14BDBDC5A6 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C007A4B4F9D345ACBDD53CF0 /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		155F79E249C94DD8BDD0555D /* CDVImgDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F38C2ACEAA8F43AC9C00E6DE /* CDVImgDownloader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -165,6 +166,8 @@
 		525DFAC9DEAC4061A1314E79 /* SocialSharing.h */ = {isa = PBXFileReference; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		D1AA578883364DC89FF01181 /* Social.framework */ = {isa = PBXFileReference; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		C007A4B4F9D345ACBDD53CF0 /* MessageUI.framework */ = {isa = PBXFileReference; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		F38C2ACEAA8F43AC9C00E6DE /* CDVImgDownloader.m */ = {isa = PBXFileReference; name = "CDVImgDownloader.m"; path = "com.okmemo.cordova.imgdownloader/CDVImgDownloader.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		E25F348DF81A4BB193095A9F /* CDVImgDownloader.h */ = {isa = PBXFileReference; name = "CDVImgDownloader.h"; path = "com.okmemo.cordova.imgdownloader/CDVImgDownloader.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -348,6 +351,8 @@
 				15BF2A5B8857439E84D79052 /* SocialSharing.m */,
 				9752E8A2632D4ED3A6FDAF31 /* NSString+URLEncoding.h */,
 				525DFAC9DEAC4061A1314E79 /* SocialSharing.h */,
+				F38C2ACEAA8F43AC9C00E6DE /* CDVImgDownloader.m */,
+				E25F348DF81A4BB193095A9F /* CDVImgDownloader.h */,
 			);
 			name = Plugins;
 			path = "Hello World/Plugins";
@@ -492,6 +497,7 @@
 				85831E0694014C6AA995E36D /* CDVVibration.m in Sources */,
 				CA5B14B763784D45BE89FDD4 /* NSString+URLEncoding.m in Sources */,
 				C85FBCBD624B45139234A554 /* SocialSharing.m in Sources */,
+				155F79E249C94DD8BDD0555D /* CDVImgDownloader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
