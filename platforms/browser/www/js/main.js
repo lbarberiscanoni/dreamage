@@ -118,6 +118,7 @@ var App = function (_React$Component) {
                     link.download = data["id"];
                     link.href = data["url"];
                     link.click();
+                    link.remove();
                 }
             });
 

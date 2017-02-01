@@ -324,6 +324,32 @@ var App = function (_React$Component) {
             this.setState({ "image": processedPicURL });
         }
     }, {
+        key: "dream_aws_version",
+        value: function dream_aws_version(e) {
+            e.preventDefault();
+            var form_data = new FormData((0, _jquery2.default)("#form")[0]);
+            var processedPicURL = "";
+            _jquery2.default.ajax({
+                method: "POST",
+                url: "http://fac18736.ngrok.io/dream",
+                data: form_data,
+                contentType: false,
+                cache: false,
+                processData: false,
+                dataType: 'json',
+                success: function success(data) {
+                    console.log(data);
+                    processedPicURL = data["url"];
+                    //download the image on the user's phone
+                    cordova.plugins.imgDownloader.downloadWithUrl(processedPicURL, function () {
+                        alert("success");
+                    }, function () {
+                        alert("error");
+                    });
+                }
+            });
+        }
+    }, {
         key: "dream",
         value: function dream(e) {
             e.preventDefault();

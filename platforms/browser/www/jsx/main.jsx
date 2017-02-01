@@ -65,6 +65,7 @@ class App extends React.Component {
                 link.download = data["id"];
                 link.href = data["url"];
                 link.click();
+                link.remove();
             }
         });
 

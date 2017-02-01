@@ -72,6 +72,28 @@ class App extends React.Component {
         this.setState({"image": processedPicURL});
     }
 
+    dream_aws_version(e) {
+        e.preventDefault();
+        let form_data = new FormData($("#form")[0]);
+        let processedPicURL = ""
+        $.ajax({
+            method: "POST",
+            url: "http://fac18736.ngrok.io/dream",
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false,
+            dataType: 'json',
+            success: function(data){
+                console.log(data)
+                processedPicURL = data["url"]
+                //download the image on the user's phone
+                cordova.plugins.imgDownloader.downloadWithUrl(processedPicURL, () => { alert("success") }, () => { alert("error") }); 
+            }
+        })
+    }
+
+
     dream(e) {
         e.preventDefault();
         let form_data = new FormData($("#form")[0]);
